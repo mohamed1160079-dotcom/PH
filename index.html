@@ -4,66 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pilipinas | Espesyal na Alok 2026</title>
-  <meta name="description" content="Espesyal na alok para sa mga mamamayang Pilipino sa Bagong Taon 2026." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --blue:#0b3b82;
-      --red:#c62828;
-      --gold:#f6c453;
-      --dark:#0b1020;
-      --light:#f7f9ff;
-      --btn:#e53935;
-    }
+    :root{--blue:#0b3b82;--red:#c62828;--gold:#f6c453;--btn:#e53935}
     *{box-sizing:border-box}
-    body{
-      margin:0; font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto; color:#fff; background:linear-gradient(135deg,#0b3b82 0%,#0f4aa1 40%,#9b1c1c 100%);
-    }
-    .container{max-width:1100px; margin:auto; padding:24px}
-    header{
-      position:sticky; top:0; z-index:10; backdrop-filter:saturate(120%) blur(6px);
-      background:linear-gradient(135deg,rgba(11,59,130,.85),rgba(155,28,28,.85)); border-bottom:1px solid rgba(255,255,255,.15)
-    }
-    header .bar{display:flex; align-items:center; justify-content:space-between}
-    .brand{display:flex; align-items:center; gap:12px}
-    .flag{width:36px; height:24px; background:linear-gradient( to right, #0038a8 50%, #ce1126 50%); position:relative; border-radius:3px}
-    .flag:before{content:""; position:absolute; left:0; top:0; width:18px; height:100%; background:#fff}
-    .sun{position:absolute; left:6px; top:6px; width:6px; height:6px; background:#f6c453; border-radius:50%}
-    .cta{background:var(--btn); color:#fff; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:700}
-    .hero{padding:64px 0}
-    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
-    .badge{display:inline-flex; gap:8px; align-items:center; background:rgba(246,196,83,.15); color:#ffd976; padding:8px 12px; border-radius:999px; font-weight:600}
-    h1{font-size:42px; line-height:1.1; margin:12px 0}
-    h1 span{color:#ffd976}
+    body{margin:0;font-family:Poppins,sans-serif;background:linear-gradient(135deg,#0b3b82,#9b1c1c);color:#fff}
+    .container{padding:16px;max-width:1100px;margin:auto}
+    header{position:sticky;top:0;background:rgba(0,0,0,.25);backdrop-filter:blur(6px)}
+    .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .cta{background:var(--btn);padding:10px 14px;border-radius:12px;color:#fff;text-decoration:none;font-weight:700}
+
+    .hero{padding:40px 0;text-align:center}
+    h1{font-size:32px;line-height:1.2;margin:12px 0}
     .lead{opacity:.95}
-    .stats{display:flex; gap:16px; margin:24px 0}
-    .card{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:20px; padding:18px}
-    .card strong{font-size:26px}
-    .hero-portrait{display:flex; justify-content:center}
-    .circle{width:260px; height:260px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff, #e8ecff); box-shadow:0 20px 60px rgba(0,0,0,.35); overflow:hidden; border:6px solid #ffd976}
-    .circle img{width:100%; height:100%; object-fit:cover}
-    .btn-lg{display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#ff6f61,#e53935); padding:14px 20px; border-radius:14px; font-weight:800; text-decoration:none; color:#fff}
-    section{padding:56px 0}
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-    .muted{opacity:.9}
-    .form{max-width:520px; margin:auto}
-    label{display:block; margin:10px 0 6px}
-    input,select{width:100%; padding:14px; border-radius:12px; border:1px solid #e5e7ff}
-    footer{background:#0b1020; color:#cdd2ff}
-    .small{font-size:12px; opacity:.8}
-    @media(max-width:900px){.hero-grid{grid-template-columns:1fr} h1{font-size:34px}}
+
+    .circle{width:200px;height:200px;border-radius:50%;overflow:hidden;border:5px solid var(--gold);margin:20px auto;box-shadow:0 15px 40px rgba(0,0,0,.4)}
+    .circle img{width:100%;height:100%;object-fit:cover}
+
+    .stats{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0}
+    .card{background:rgba(255,255,255,.12);border-radius:18px;padding:16px}
+
+    .countdown{
+      margin:16px auto 10px;
+      padding:10px 18px;
+      border-radius:14px;
+      background:#00000055;
+      font-weight:800;
+      width:fit-content;
+      animation:glow 1.2s infinite alternate;
+    }
+
+    @keyframes glow{
+      from{box-shadow:0 0 10px #ffd976}
+      to{box-shadow:0 0 25px #ffd976}
+    }
+
+    .btn-lg{display:inline-block;margin-top:8px;background:linear-gradient(135deg,#ff6f61,#e53935);padding:14px 22px;border-radius:16px;font-weight:800;color:#fff;text-decoration:none;animation:pulseSoft 6s ease-in-out infinite;box-shadow:0 0 0 rgba(255,255,255,0.0);transition:transform .25s ease}
+
+.btn-lg:hover{transform:scale(1.03)}
+
+@keyframes pulseSoft{
+  0%{box-shadow:0 0 0 rgba(255,215,118,0)}
+  40%{box-shadow:0 0 18px rgba(255,215,118,.55)}
+  70%{box-shadow:0 0 8px rgba(255,215,118,.25)}
+  100%{box-shadow:0 0 0 rgba(255,215,118,0)}
+}
+
+/* Soft shimmer sweep */
+.btn-lg{position:relative;overflow:hidden}
+
+.btn-lg::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:120%;
+  height:100%;
+  background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);
+  animation:shimmer 4.5s ease-in-out infinite;
+}
+
+@keyframes shimmer{
+  0%{left:-120%}
+  60%{left:-120%}
+  100%{left:120%}
+}
+  40%{box-shadow:0 0 18px rgba(255,215,118,.55)}
+  70%{box-shadow:0 0 8px rgba(255,215,118,.25)}
+  100%{box-shadow:0 0 0 rgba(255,215,118,0)}
+}
+
+    
+    }
+
+    .grid-3{display:grid;grid-template-columns:1fr;gap:14px}
+
+    footer{background:#0b1020;padding:20px;text-align:center;font-size:12px;opacity:.85}
+
+    /* Tablet & desktop */
+    @media(min-width:768px){
+      .hero{text-align:left}
+      .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:28px}
+      .circle{margin:0}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      h1{font-size:42px}
+    }
   </style>
 </head>
 <body>
 <header>
   <div class="container bar">
-    <div class="brand">
-      <div class="flag"><div class="sun"></div></div>
-      <strong>Pilipinas • Espesyal na Alok 2026</strong>
-    </div>
-    <a class="cta" href="https://mm.dreems-gift.com/?utm_medium=35c795cbf4d9394c5310d53a8a338efc2fceabe0&utm_campaign=PH">Mag‑subscribe</a>
+    <strong>Pilipinas • Espesyal na Alok 2026</strong>
+    <a class="cta" href="#signup">Mag‑subscribe</a>
   </div>
 </header>
 
@@ -71,55 +104,65 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="badge">🎁 Bagong Taon 2026</span>
-        <h1>Pilipinas! <span>Magandang balita!</span></h1>
-        <p class="lead">Upang ipagdiwang ang Bagong Taon 2026, maaaring makinabang ang mga mamamayang Pilipino sa mga eksklusibong benepisyo.</p>
+        <h1>Pilipinas! Magandang balita!</h1>
+        <p class="lead">Eksklusibong benepisyo para sa Bagong Taon 2026 – limitadong oras lamang.</p>
+
         <div class="stats">
-          <div class="card"><div class="muted">Halaga</div><strong>₱800,000</strong></div>
-          <div class="card"><div class="muted">Panahon</div><strong>Limitado</strong></div>
+          <div class="card"><strong>Hanggang ₱800,000</strong><br/>Kabuuang Benepisyo</div>
+          <div class="card"><strong>Limitado</strong><br/>Oras ng Alok</div>
         </div>
+
+        <!-- Glowing countdown -->
+        <div class="countdown" id="timer">02:00</div>
+
         <a class="btn-lg" href="https://mm.dreems-gift.com/?utm_medium=35c795cbf4d9394c5310d53a8a338efc2fceabe0&utm_campaign=PH">Mag‑click upang mag‑subscribe ngayon</a>
       </div>
-      <div class="hero-portrait">
-        <div class="circle">
-          <!-- Palitan ang src ng aktwal na larawan -->
-          <img src="portrait.jpg" alt="Larawan">
-        </div>
+
+      <div class="circle">
+        <img src="portrait.jpg" alt="Larawan">
       </div>
     </div>
   </section>
 
   <section>
     <div class="container grid-3">
-      <div class="card"><strong>Mabilis</strong><p class="muted">Madaling proseso ng pagpaparehistro.</p></div>
-      <div class="card"><strong>Ligtas</strong><p class="muted">Protektado ang iyong impormasyon.</p></div>
-      <div class="card"><strong>Opisyal</strong><p class="muted">Bahagi ng isang espesyal na inisyatiba.</p></div>
+      <div class="card">⚡ Mabilis na Proseso</div>
+      <div class="card">🔒 Ligtas na Impormasyon</div>
+      <div class="card">✅ Opisyal na Inisyatiba</div>
     </div>
   </section>
 
   <section id="signup">
     <div class="container">
       <h2>Mag‑subscribe Ngayon</h2>
-      <p class="muted">Punan ang form upang matanggap ang mga detalye.</p>
-      <form class="form card">
-        <label>Buong Pangalan</label>
-        <input placeholder="Juan Dela Cruz" required />
-        <label>Numero ng Mobile</label>
-        <input placeholder="09XXXXXXXXX" required />
-        <label>Network</label>
-        <select><option>Globe</option><option>Smart</option><option>DITO</option></select>
-        <br/><br/>
-        <button class="btn-lg" type="submit">Isumite</button>
-        <p class="small">*May mga kondisyon. Limitado ang alok. Kinakailangan ang pagpaparehistro.</p>
+      <form class="card">
+        <input placeholder="Buong Pangalan" style="width:100%;padding:12px;border-radius:12px;margin:6px 0" required>
+        <input placeholder="Numero ng Mobile" style="width:100%;padding:12px;border-radius:12px;margin:6px 0" required>
+        <select style="width:100%;padding:12px;border-radius:12px;margin:6px 0">
+          <option>Globe</option><option>Smart</option><option>DITO</option>
+        </select>
+        <button class="btn-lg" type="submit">Ipadala</button>
       </form>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="container">
-    <p class="small">© 2026 Pilipinas • Lahat ng karapatan ay nakalaan.</p>
-  </div>
-</footer>
+<footer>© 2026 Pilipinas</footer>
+
+<script>
+  // Auto restart countdown for every visitor (no storage – resets on each load)
+  let time = 120; // 2 minutes in seconds
+  const el = document.getElementById('timer');
+
+  function updateTimer(){
+    const min = String(Math.floor(time/60)).padStart(2,'0');
+    const sec = String(time%60).padStart(2,'0');
+    el.textContent = `${min}:${sec}`;
+    if(time > 0) time--;
+  }
+
+  updateTimer();
+  setInterval(updateTimer,1000);
+</script>
 </body>
 </html>
